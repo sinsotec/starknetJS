@@ -2,6 +2,8 @@ import { useAccount, useBalance } from "@starknet-react/core";
 
 const STRK_ADDRESS = import.meta.env.VITE_STRK_ADDRESS;
 const ETH_ADDRESS = import.meta.env.VITE_ETH_ADDRESS;
+const STKJS_ADDRESS = import.meta.env.VITE_STKJS_ADDRESS;
+
 
 
 // Hook personalizado para devolver balances
@@ -25,11 +27,19 @@ export default function useBalanceArray() {
           watch: true
       })
 
+      const stkjs = useBalance({
+        token: STKJS_ADDRESS,
+        address,
+        watch: true
+    })
+
       const strkBalance = {...strk, address: STRK_ADDRESS};
       const ethBalance = {...eth, address: ETH_ADDRESS};
+      const stkjsBalance = {...stkjs, address: STKJS_ADDRESS};
+
 
   
 
-  return  { strkBalance, ethBalance } ;
+  return  { strkBalance, ethBalance, stkjsBalance } ;
 
 }
