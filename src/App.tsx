@@ -6,7 +6,7 @@ import Airdrop from "./components/starknet/Airdrop";
 
 function App() {
   return (
-    <main className=" flex flex-col items-center justify-center min-h-screen gap-12">
+    <main className="flex flex-col items-center justify-center min-h-screen gap-12 m-600">
       <Header />
       <Balances />
       <Transfer />

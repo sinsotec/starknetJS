@@ -60,7 +60,7 @@ export default function Transfer() {
         <input type="text" onChange={handleInputAccountChange} style={{ border: '1px solid black', width: '600px', textAlign: 'center'}}></input>
 		<select name="select" onChange={handleSelectSymbolChange}>
 			<option value="">Select Coin</option> 
-			{ Object.entries(balances).map((balance) => <option key={balance[1].data?.symbol} value={balance[1].address}>{balance[1].data?.symbol}</option>) }
+			{ Object.entries(balances).map((balance) => <option key={balance[1].data?.symbol} value={balance[1].address}>{balance[1].data?.symbol != '0' ? balance[1].data?.symbol : 'STKJS'}</option>) }
 			
 		</select>
         <p>Amount to Transfer in wei: </p>
